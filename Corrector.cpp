@@ -150,19 +150,23 @@ void	Diccionario(char* szNombre, std::unordered_map<std::unordered_map<std::stri
 	int &	iNumLista)							//Numero de elementos en la szListaFinal
 **************************************/
 void	ListaCandidatas(
-	char	szPalabrasSugeridas[][TAMTOKEN],	//Lista de palabras clonadas
+	std::string	szPalabrasSugeridas[][TAMTOKEN],	//Lista de palabras clonadas
 	int		iNumSugeridas,						//Lista de palabras clonadas
-	char	szPalabras[][TAMTOKEN],				//Lista de palabras del diccionario
+	std::string	szPalabras[][TAMTOKEN],				//Lista de palabras del diccionario
 	int		iEstadisticas[],					//Lista de las frecuencias de las palabras
 	int		iNumElementos,						//Numero de elementos en el diccionario
-	char	szListaFinal[][TAMTOKEN],			//Lista final de palabras a sugerir
+	std::string	szListaFinal[][TAMTOKEN],			//Lista final de palabras a sugerir
 	int		iPeso[],							//Peso de las palabras en la lista final
 	int& iNumLista)							//Numero de elementos en la szListaFinal
 {
 	
 	iNumLista = 0; 
-	for (int paso = 0; paso < iNumSugeridas; paso++) { 
 
+	if (iNumSugeridas == 0){
+		return;
+	}	
+	
+	for (int paso = 0; paso < iNumSugeridas; paso++) { 
 		for (int c = 0; c < iNumElementos; c++) { 
 
 			if (strcmp(szPalabrasSugeridas[paso], szPalabras[c]) == 0) { 
