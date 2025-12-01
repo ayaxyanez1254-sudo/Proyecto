@@ -101,7 +101,7 @@ void	Diccionario(char* szNombre, std::unordered_map<std::unordered_map<std::stri
 			}
 
 		}
-
+        fclose(fp);
 		bool bNoOrdenado = true; 
 
 		for (int j = 0; j < iNumElementos && bNoOrdenado; j++) {
