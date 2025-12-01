@@ -22,7 +22,7 @@
 	int		iEstadisticas[]			:	Arreglo con el numero de veces que aparecen las palabras en el diccionario
 	int &	iNumElementos			:	Numero de elementos en el diccionario
 **************************************/
-void	Diccionario(char* szNombre, std::unordered_map<std::string szPalabras[][TAMTOKEN], int iEstadisticas[], int& iNumElementos)
+void	Diccionario(char* szNombre, std::unordered_map<std::unordered_map<std::string szPalabras[][TAMTOKEN], int iEstadisticas[], int& iNumElementos)
 {
 	FILE* fp;
 	fopen_s(&fp, szNombre, "r"); 
