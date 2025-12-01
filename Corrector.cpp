@@ -212,13 +212,14 @@ void	ListaCandidatas(
 	char	szPalabrasSugeridas[][TAMTOKEN], 	//Lista de palabras clonadas
 	int &	iNumSugeridas)						//Numero de elementos en la lista
 **************************************/
+#include <set>
 void	ClonaPalabras(
 	char* szPalabraLeida,						// Palabra a clonar
-	char	szPalabrasSugeridas[][TAMTOKEN], 	//Lista de palabras clonadas
+	std::string	szPalabrasSugeridas[][TAMTOKEN], 	//Lista de palabras clonadas
 	int& iNumSugeridas)						//Numero de elementos en la lista
 {
 	iNumSugeridas = 0; 
-	
+	std::set<std::string sugerencias;
 	
 	strcpy_s(szPalabrasSugeridas[iNumSugeridas], TAMTOKEN, szPalabraLeida); 
 	iNumSugeridas++; 
